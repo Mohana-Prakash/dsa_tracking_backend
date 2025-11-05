@@ -7,6 +7,10 @@ const problemSchema = new mongoose.Schema(
       type: Number,
       required: [true, "Leetcode Problem No. is required"],
     },
+    difficultyLevel: {
+      type: String,
+      required: [true, "Difficult Level is required"],
+    },
     pattern: { type: String, required: [true, "Pattern is required"] },
     idea: { type: String, required: [true, "Idea is required"] },
     steps: { type: String, required: [true, "Steps are required"] },
@@ -20,6 +24,7 @@ const problemSchema = new mongoose.Schema(
       required: [true, "Space Complexity is required"],
     },
     code: { type: String, required: [true, "Code is required"] },
+    otherInfo: { type: String },
   },
   { timestamps: true }
 );

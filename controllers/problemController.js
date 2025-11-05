@@ -27,7 +27,7 @@ export const getProblems = async (req, res) => {
 
     const total = await Problem.countDocuments(filter);
     const problems = await Problem.find(filter)
-      .select("title createdAt leetCodeNo pattern _id")
+      .select("title createdAt leetCodeNo pattern _id difficultyLevel")
       .skip((page - 1) * size)
       .limit(size)
       .sort({ createdAt: -1 });
