@@ -2,6 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import problemRoutes from "./routes/problemRoutes.js";
+import adminRoutes from "./routes/adminRoutes.js";
 
 const app = express();
 app.use(
@@ -19,5 +20,6 @@ mongoose
   .catch((err) => console.error("❌ MongoDB connection error:", err));
 
 app.use("/api/problems", problemRoutes);
+app.use("/api/auth", adminRoutes);
 
 app.listen(5000, () => console.log("Server running on port 5000"));
